@@ -1,0 +1,104 @@
+.audio-spectrum{
+    margin-top: 40px;
+}
+.button-position{
+    text-align: center;
+    margin-top: 30px;
+}
+.btn-style{
+    border-radius: 25px;
+    cursor: pointer;
+    border: 1px solid #0a9cd7;;
+    background-color: #ffffff;
+    height: 52px;
+    width: 83px;
+}
+.btn-other{
+    border-radius: 15px;
+    cursor: unset;
+    border: 1px solid #0a9cd7;;
+    background-color: #ffffff;
+    width: 68px;
+    height: 29px;
+}
+.play-btn{
+    content: url('./assets/images/play.svg');
+    height: 26px;
+    width: 53px;
+    vertical-align: middle;
+}
+.pause-btn{
+    content: url('./assets/images/pause.svg');
+    height: 32px;
+    width: 47px;
+    vertical-align: middle;
+}
+.speaker-btn{
+    content: url('/assets/images/speaker.svg');
+    height: 16px;
+    width: 37px;
+    vertical-align: middle;
+}
+.forward-btn{
+    content: url('./assets/images/forward-fast.svg');
+    height: 22px;
+    width: 38px;
+    vertical-align: middle;
+}
+.static-data{
+    color: #808080;
+    line-height: 0.1;
+    text-align: end;
+    margin-right: 75%;
+    font-weight: 400;
+    font-family: sans-serif;
+    border-right: 3px solid #d6d6d6;
+    height: 130px;
+    padding-right: 30px;
+}
+.font-weight{
+    font-weight: 200;
+}
+.intro{
+    background-color: #6db006;
+    border-radius: 6px;
+    border: none;
+    color: #ffffff;
+    height: 26px;
+    margin-left: 5%;
+    margin-top: 15px;
+}
+.one{
+    background-color: #32c5ad;
+    border-radius: 6px;
+    border: none;
+    color: #ffffff;
+    height: 26px;
+    margin-left: 15%;
+}
+.empathy{
+    background-color: #7f0909b3;;
+    border-radius: 6px;
+    border: none;
+    color: #ffffff;
+    height: 26px;
+    margin-left: 76%;
+    margin-top: 15px;
+}
+.energy{
+    background-color: #24b024;
+    border-radius: 6px;
+    border: none;
+    color: #ffffff;
+    height: 26px;
+    margin-left: 70%;
+}
+.polite{
+    background-color: #301eea;
+    border-radius: 6px;
+    border: none;
+    color: #ffffff;
+    height: 26px;
+    margin-left: 86%;
+    margin-top: 15px;
+}

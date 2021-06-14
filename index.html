@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link link rel="stylesheet" href="styles.css" >
+    <title>Audio Player</title>
+</head>
+<body>
+    <div>
+        <button class="intro">Introduction</button>
+        <button class="one">one_six</button>
+        <button class="energy">Rapport Building - Energy</button>
+        <button class="empathy">Rapport Building - Empathy</button>
+        <button class="polite">Polite</button>
+    </div>
+    <div class="audio-spectrum" id="audio-spectrum"></div>
+    <!-- action buttons -->
+    <div class="button-position">
+        <button class="btn-other" id="btn-speaker" disabled="disabled"><i class="speaker-btn"></i></button>
+        <button class="btn-style" id="btn-play" disabled="disabled"><i class="play-btn"></i></button>
+        <button class="btn-style" id="btn-pause" disabled="disabled"><i class="pause-btn"></i></button>
+        <button class="btn-other" id="btn-farward" disabled="disabled"><i class="forward-btn"></i></button>        
+    </div>
+    <div class="static-data">
+        <h4 class="font-weight">Laptop details</h4>
+        <h4 class="font-weight">Closure</h4>
+        <h4 class="font-weight">Refferals</h4>
+        <h4 class="font-weight">Importance of MATH</h4>
+        <h4 class="font-weight">Report Building - Energy</h4>
+        <h4 class="font-weight">one_six</h4>
+    </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wavesurfer.js/1.3.7/wavesurfer.min.js"></script>
+    <script>
+        //Storing buttons
+        var buttons = {
+            playpause: document.getElementById("btn-play-pause"),
+            play: document.getElementById("btn-play"),
+            pause: document.getElementById("btn-pause"),
+        };
+
+        //instance of wave surfer
+        var Spectrum = WaveSurfer.create({
+            container: '#audio-spectrum',
+            barWidth: 2,
+            barHeight: 1, // the height of the wave
+            barGap: null,
+            progressColor: "#C3002F"
+        });
+
+        //handle play button
+        buttons.play.addEventListener("click", function(){
+            Spectrum.play();
+
+            //enable/disable respectively buttons
+            buttons.pause.disabled = false;
+            buttons.play.disabled = true;
+        }, false);
+
+        //Handle pause button 
+        buttons.pause.addEventListener("click", function(){
+            Spectrum.pause();
+
+            //enable/disable respectively buttons
+            buttons.pause.disabled = true;
+            buttons.play.disabled = false;
+        }, false);
+
+        function togglePlay(){
+
+        }
+
+        //Add a listener to enable the play button once it's ready
+        Spectrum.on('ready',function(){
+            buttons.play.disabled = false;
+        });
+
+        window.addEventListener("resize", function(){
+
+            //get the current progress according to the cursor position
+            var currentProgress = Spectrum.getCurrentTime() / Spectrum.getDuration();
+
+            //Reset graph
+            Spectrum.empty();
+            Spectrum.drawBuffer();
+
+            // set original position
+            Spectrum.seekTo(currentProgress);
+
+            //enable/disable respectively buttons
+
+            buttons.pause.disabled = true;
+            buttons.play.disabled = false;
+        }, false);
+
+        //load the audio file from your domain
+        Spectrum.load('./assets/songs/audio.mp3');
+
+    </script>
+</body>
+</html>
